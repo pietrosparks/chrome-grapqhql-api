@@ -1,0 +1,18 @@
+
+type User {
+  id: ID! @id
+  email: String! @unique
+  password: String!
+  subscribed: Boolean! @default(value: false)
+}
+
+type SubscribedItem {
+  id: ID! @id
+  user: User! @relation(link: INLINE)
+  count: Float! @default(value: 0)
+  lastPing: DateTime
+  maxStreakDays: Float! 
+  currentStreak: Float! @default(value: 1)
+  timeStarted: DateTime!
+  active: Boolean! @default(value: false)
+}

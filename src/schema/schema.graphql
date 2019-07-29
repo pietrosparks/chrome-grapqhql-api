@@ -1,0 +1,10 @@
+#import UserInput, UserSignUpData, UserLoginData, UserData from './user.graphql'
+
+type Query {
+  user: User
+}
+
+type Mutation {
+  signUpUser(data: UserInput): UserSignUpData
+  loginUser(data: UserInput): UserLoginData
+}
